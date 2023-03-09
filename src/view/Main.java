@@ -1,15 +1,11 @@
 package view;
 
-import java.awt.desktop.SystemSleepEvent;
-
 import controller.SapoControll;
 
 public class Main 
 {
 	public static void main(String[] args)
 	{
-		
-		
 		
 		SapoControll sapo[] = 
 			{
@@ -27,9 +23,8 @@ public class Main
 		}
 		
 		try {
-			Thread.sleep(500);
+			Thread.sleep(200);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -45,7 +40,6 @@ public class Main
 				}
 			}
 		}
-		
 		
 		for(int i = 0; i < 5; i++)
 		{
