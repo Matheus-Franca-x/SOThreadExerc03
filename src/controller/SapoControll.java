@@ -43,7 +43,7 @@ public class SapoControll
 			
 //			if(d2 == 1)
 //			{
-				d10 = dados.nextInt(11);
+				d10 = dados.nextInt(11); //de 0m a 10m
 				
 				this.meters += d10; //metros percorridos
 				System.out.println("E o sapo " + this.sapoName + " com id " + this.identification + " Pula " + d10 + "m");
