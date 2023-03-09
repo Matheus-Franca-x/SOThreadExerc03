@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.desktop.SystemSleepEvent;
+
 import controller.SapoControll;
 
 public class Main 
@@ -7,17 +9,48 @@ public class Main
 	public static void main(String[] args)
 	{
 		
-		SapoControll sapo1 = new SapoControll("Rodolfo", 1);	
-		SapoControll sapo2 = new SapoControll("Rodrigo", 2);		
-		SapoControll sapo3 = new SapoControll("Jessica", 3);		
-		SapoControll sapo4 = new SapoControll("Catharine", 4);		
-		SapoControll sapo5 = new SapoControll("Matheus", 5);		
 		
 		
+		SapoControll sapo[] = 
+			{
+				new SapoControll("Rodolfo", 1),
+				new SapoControll("Rodrigo", 2),
+				new SapoControll("Jessica", 3),
+				new SapoControll("Matheus", 4),
+				new SapoControll("Bela", 5)
+			};
+		SapoControll aux = new SapoControll(null, 0);
+		
+		for(int i = 0; i < 5; i++)
+		{
+			sapo[i].sapoCorrida();
+		}
+		
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		for(int i = 0; i < 5; i++)
+		{
+			for(int j = 0; j < 5; j++)
+			{
+				if (sapo[i].positions < sapo[j].positions)
+				{
+					aux = sapo[i];
+					sapo[i] = sapo[j];
+					sapo[j] = aux;
+				}
+			}
+		}
 		
 		
+		for(int i = 0; i < 5; i++)
+		{
+			System.out.println("O sapo " + sapo[i].sapoName + " com a id " + sapo[i].identification + " terminou em " + sapo[i].positions + "° lugar");
+		}
 		
-		
-		
-	}	
+	}
 }
