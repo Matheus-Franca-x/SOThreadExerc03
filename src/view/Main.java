@@ -7,7 +7,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		
-		SapoControll sapo[] = 
+		SapoControll sapo[] = //vetor com os nomes e id dos sapos
 			{
 				new SapoControll("Rodolfo", 1),
 				new SapoControll("Rodrigo", 2),
@@ -15,14 +15,14 @@ public class Main
 				new SapoControll("Matheus", 4),
 				new SapoControll("Bela", 5)
 			};
-		SapoControll aux = new SapoControll(null, 0);
+		SapoControll aux = new SapoControll(null, 0); //auxiliar para fazer a troca
 		
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < 5; i++) //inicio da corrida
 		{
 			sapo[i].sapoCorrida();
 		}
 		
-		try {
+		try { //pausa para termino da corrida com as posições corretas dos sapos
 			Thread.sleep(200);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -32,7 +32,7 @@ public class Main
 		{
 			for(int j = 0; j < 5; j++)
 			{
-				if (sapo[i].positions < sapo[j].positions)
+				if (sapo[i].positions < sapo[j].positions) //sort para a classificação
 				{
 					aux = sapo[i];
 					sapo[i] = sapo[j];
@@ -41,9 +41,9 @@ public class Main
 			}
 		}
 		
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < 5; i++) //print da posição de cada
 		{
-			System.out.println("O sapo " + sapo[i].sapoName + " com a id " + sapo[i].identification + " terminou em " + sapo[i].positions + "° lugar");
+			sapo[i].classificacao();
 		}
 		
 	}
