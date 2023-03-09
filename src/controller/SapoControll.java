@@ -8,7 +8,7 @@ public class SapoControll
 	private String sapoName; //nome do sapo
 	private int identification; //identificação do sapo
 	private int meters = 0; //caminho andado do sapo
-	public double positions; //posição final do sapo
+	public int positions; //posição final do sapo
 	static int a = 0; //metodo para pegar a posiçãp do sapo
 	
 	
